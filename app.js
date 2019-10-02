@@ -1,20 +1,55 @@
-import { compareResult } from './compare-result.js';
+import compareResult from './compare-result.js';
 
 //initalize DOM elements//
-let numberGuess = document.getElementById('number-guess');
+let guessNumber = document.getElementById('number-guess');
+const submitButton = document.getElementById('submit-button');
+const guessTimes = document.getElementById('guess-times');
+const userResult = document.getElementById('user-result');
+const guess = document.getElementById ('guess');
+
+//add two other things referred to in Index
 
 //set initial state//
-let guessTimes = 0;
-let userAnswer = userAnswer.enterNumber;
-let numberAnswer = 7
+const correctNumber = 7;
+let numGuesses = 4;
 
 //what events do I need to listen to?
-numberGuess.addEventListener('click', () => {
-    userAnswer.numberGuess = userAnswer;});
-let userAnswerNumber = Math.floor(userAnswer);
+/*numberGuess.addEventListener('click', () => {
+userAnswer.numberGuess = userAnswer;});
+let userAnswerNumber = Math.floor(userAnswer);*/
 
-for (let guessTimes = 4; guessTimes < 4; guessTimes--);
-document.write(guessTimes);
+submitButton.addEventListener('click', () => {
+    let currentGuess = parseInt(guess.value, 10); //change input to integer//
+    numGuesses -= 1;
+    //change input to integer//
+    numGuesses -= 1;
+
+//messages for user//
+   // let guessTimes = 'You have ' + numGuesses + 'guesses left';//
+    let guessReply = '';
+
+//comparing guesses with compareNumbers()//
+
+    if ((compareResult(currentGuess, correctNumber) === 1) && (numGuesses > 0)) {
+        guessReply = 'You guessed too high';
+    }
+    else if ((compareResult(currentGuess, correctNumber) === -1) && (numGuesses > 0)) {
+        guessReply = 'You guessed too low!';
+    }
+    else if ((compareResult(currentGuess, correctNumber) === -1) && (numGuesses > 0)) {
+        guessReply = 'You guessed correctly!';
+    }
+    //disables button
+    else {
+        submitButton.disabled = true;
+        guessReply = 'You are out of guesses!';
+    }
+}
+);
+
+
+// for (let guessTimes = 4; guessTimes < 4; guessTimes--);
+// document.write(guessTimes);
 
 
 /*
