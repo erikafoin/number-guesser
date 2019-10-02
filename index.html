@@ -14,7 +14,7 @@
     <p>This is a number guessing game!</p>
         <ul>
             <li>The computer has guessed a number between 1-20.</li>
-            <li>You have 5 tries to guess the number.</li>
+            <li>You have 4 tries to guess the number.</li>
             <li>The computer will tell you if you are correct, too high or too low.<li>
             <li>Good luck!</li>
         </ul>
@@ -27,8 +27,13 @@
     <button>
         Take a Guess!
     </button>
-    
-    <p>Number of guesses remaining:<script>guessTimes</script></p>
+        <div>
+            Tries remaining: <span id="guessTimes"></span>
+        </div>
+        <div>
+            Result: <span id="user-result"></span>
+        </div>
+
     <script src="app.js"></script>
 </body>
 

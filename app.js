@@ -1,13 +1,12 @@
 import { compareResult } from './compare-result.js';
 
 //initalize DOM elements//
-const numberAnswer = 7;
 let numberGuess = document.getElementById('number-guess');
 
-numberAnswer.startingNumber = 0;
 //set initial state//
 let guessTimes = 0;
 let userAnswer = userAnswer.enterNumber;
+let numberAnswer = 7
 
 //what events do I need to listen to?
 numberGuess.addEventListener('click', () => {
