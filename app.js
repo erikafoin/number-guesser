@@ -5,7 +5,9 @@ const guessTimes = document.getElementById('guess-times');
 const userResult = document.getElementById('user-result');
 const guess = document.getElementById ('guess');
 
-const correctNumber = 7;
+//const correctNumber = 7;//
+let correctNumber = Math.floor(Math.random() * Math.floor(20));
+console.log(correctNumber);
 let numGuesses = 4;
 
 submitButton.addEventListener('click', () => {
