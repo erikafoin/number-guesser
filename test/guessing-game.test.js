@@ -14,7 +14,7 @@ test('should return 0 if the guess and the number are the same', function(assert
     const result = compareResult(userGuess, numberAnswer);
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result, '0');
+    assert.equal(result, 0);
 });
 
 test('should return 1 if the guess is larger than the number', function(assert) {
@@ -27,7 +27,7 @@ test('should return 1 if the guess is larger than the number', function(assert) 
     const result = compareResult(userGuess, numberAnswer);
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result, '1');
+    assert.equal(result, 1);
 });
 
 test('should return -1 if the guess is smaller than the number', function(assert) {
@@ -40,5 +40,5 @@ test('should return -1 if the guess is smaller than the number', function(assert
     const result = compareResult(userGuess, numberAnswer);
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result, '-1');
+    assert.equal(result, -1);
 });
