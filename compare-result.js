@@ -9,13 +9,14 @@ const compareResult = (guess, correctNumber) => {
     }
 };
 
-const userResult = (0, 1, 2) =>
+/*const userResult = () =>
 if (compareResult='0') {
-    alert('You got it!');
+    ('You got it!');
 } else if (compareResult='1') {
-    alert('Too high. Try again.)
+    ('Too high. Try again.)
 } else if (compareResult='-1') {
-    alert('Too low. Try again.)
-};
+    ('Too low. Try again.)
+};*/
 
-export default userResult;
+export default compareResult;
+//export default userResult;//
