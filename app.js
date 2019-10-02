@@ -1,7 +1,7 @@
 import compareResult from './compare-result.js';
 
 //initalize DOM elements//
-let guessNumber = document.getElementById('number-guess');
+//let guessNumber = document.getElementById('number-guess');//
 const submitButton = document.getElementById('submit-button');
 const guessTimes = document.getElementById('guess-times');
 const userResult = document.getElementById('user-result');
@@ -13,36 +13,35 @@ const guess = document.getElementById ('guess');
 const correctNumber = 7;
 let numGuesses = 4;
 
-//what events do I need to listen to?
-/*numberGuess.addEventListener('click', () => {
-userAnswer.numberGuess = userAnswer;});
-let userAnswerNumber = Math.floor(userAnswer);*/
-
 submitButton.addEventListener('click', () => {
     let currentGuess = parseInt(guess.value, 10); //change input to integer//
-    numGuesses -= 1;
-    //change input to integer//
     numGuesses -= 1;
 
 //messages for user//
    // let guessTimes = 'You have ' + numGuesses + 'guesses left';//
-    let guessReply = '';
+ //   let guessReply = '';//
 
 //comparing guesses with compareNumbers()//
 
     if ((compareResult(currentGuess, correctNumber) === 1) && (numGuesses > 0)) {
-        guessReply = 'You guessed too high';
+        userResult.textContent = 'You guessed too high';
     }
     else if ((compareResult(currentGuess, correctNumber) === -1) && (numGuesses > 0)) {
-        guessReply = 'You guessed too low!';
+        userResult.textContent = 'You guessed too low!';
     }
-    else if ((compareResult(currentGuess, correctNumber) === -1) && (numGuesses > 0)) {
-        guessReply = 'You guessed correctly!';
+    else if ((compareResult(currentGuess, correctNumber) === 0) && (numGuesses > 0)) {
+        userResult.textContent = 'You guessed correctly! You win!';
+    }
+    else if ((compareResult(currentGuess, correctNumber) <= 1) && (numGuesses < 0))
+    {
+        userResult.textContent = 'You are out of guesses. You lose!';
     }
     //disables button
-    else {
+    if (guessTimes === 0) {
         submitButton.disabled = true;
-        guessReply = 'You are out of guesses!';
+    }
+    else if (guessTimes > 0) {
+        submitButton.disabled = false;
     }
 }
 );
