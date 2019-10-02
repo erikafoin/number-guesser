@@ -14,7 +14,7 @@ numberGuess.addEventListener('click', () => {
     userAnswer.numberGuess = userAnswer;});
 let userAnswerNumber = Math.floor(userAnswer);
 
-for (let guessTimes = 0; guessTimes < 5; guessTimes++);
+for (let guessTimes = 4; guessTimes < 4; guessTimes--);
 document.write(guessTimes);
 
 
