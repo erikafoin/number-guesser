@@ -14,7 +14,7 @@ test('should return 0 if the guess and the number are the same', function(assert
     const result = compareResult(userGuess, numberAnswer);
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result, 0);
+    assert.equal(result, '0');
 });
 
 test('should return 1 if the guess is larger than the number', function(assert) {
@@ -27,18 +27,18 @@ test('should return 1 if the guess is larger than the number', function(assert) 
     const result = compareResult(userGuess, numberAnswer);
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result, 1);
+    assert.equal(result, '1');
 });
 
-test('should return -1 if the guess is larger than the number', function(assert) {
+test('should return -1 if the guess is smaller than the number', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const numberAnswer = 5;
-    let userGuess = 4;
+    let userGuess = 1;
     //Act 
     // Call the function you're testing and set the result to a const
     const result = compareResult(userGuess, numberAnswer);
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result, -1);
+    assert.equal(result, '-1');
 });
