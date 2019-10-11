@@ -21,10 +21,11 @@ submitButton.addEventListener('click', () => {
     else if ((compareResult(currentGuess, correctNumber) === 0) && (numGuesses > 0)) {
         userResult.textContent = 'You guessed correctly! You win!';
     }
-    else if ((compareResult(currentGuess, correctNumber) <= 1) && (numGuesses < 0))
-    {
+    else if ((compareResult(currentGuess, correctNumber) <= 1) && (numGuesses < 0)) {
         userResult.textContent = 'You are out of guesses. You lose!';
     }
+
+    
 
     if (numGuesses === 0) {
         submitButton.disabled = true;
